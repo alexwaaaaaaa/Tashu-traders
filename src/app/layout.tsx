@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header, Footer } from "@/components/layout";
+import { SmoothScroll } from "@/components/SmoothScroll";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
   display: "swap",
+  preload: true,
 });
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
-  display: "swap",
-});
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#1e3a5f",
+};
 
 export const metadata: Metadata = {
   title: "TASHRA - Reliable Government Tender Supplier | Tashu Traders",
@@ -48,12 +48,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${poppins.variable} font-sans antialiased min-h-screen flex flex-col`}
-      >
-        <Header />
-        <main className="flex-grow pt-[72px]">{children}</main>
-        <Footer />
+      <body className={`${inter.className} antialiased min-h-screen flex flex-col`}>
+        <SmoothScroll>
+          <Header />
+          <main className="flex-grow pt-[72px]">{children}</main>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );
