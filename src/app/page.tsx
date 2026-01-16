@@ -1,6 +1,9 @@
 import { Metadata } from "next";
-import { Hero } from "@/components/sections/Hero";
-import { Highlights } from "@/components/sections/Highlights";
+import { HeroCarousel } from "@/components/sections/HeroCarousel";
+import { NewsCards } from "@/components/sections/NewsCards";
+import { StatsSection } from "@/components/sections/StatsSection";
+import { SolutionsSection } from "@/components/sections/SolutionsSection";
+import { CustomerStories } from "@/components/sections/CustomerStories";
 import { generateMetadata as getPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = getPageMetadata("home");
@@ -8,8 +11,11 @@ export const metadata: Metadata = getPageMetadata("home");
 export default function Home() {
   return (
     <main>
-      <Hero />
-      <Highlights />
+      <HeroCarousel />
+      <NewsCards />
+      <SolutionsSection />
+      <CustomerStories />
+      <StatsSection />
     </main>
   );
 }

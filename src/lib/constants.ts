@@ -79,9 +79,9 @@ export const companyInfo = {
   brand: "TASHRA",
   tagline: "Reliable Government Tender Supplier for Quality Products",
   businessType: "Proprietorship",
-  mobile: "[Mobile Number]",
-  email: "[Email Address]",
-  location: "[City, State]",
+  mobile: "+91 7321 044 854",
+  email: "traderstashu@gmail.com",
+  location: "India",
 };
 
 // Highlight Points for Home Page

@@ -101,7 +101,7 @@ describe("Property 1: Responsive Layout Consistency", () => {
             fc.constantFrom(...allPages),
             fc.integer({ min: 320, max: 1920 })
           ),
-          ([page, viewport]: [string, number]) => {
+          ([_page, viewport]: [string, number]) => {
             const allNavItems: NavItem[] = [...mainNavItems, ...legalLinks];
             const isMobile = viewport < 768; // md breakpoint
 
@@ -131,18 +131,13 @@ describe("Property 1: Responsive Layout Consistency", () => {
       fc.assert(
         fc.property(
           fc.integer({ min: 320, max: 1920 }),
-          (viewport: number) => {
-            const isMobile = viewport < 768;
-
+          (_viewport: number) => {
             // Property: Mobile toggle visibility is determined by md breakpoint
             // The class "md:hidden" means visible below 768px, hidden at 768px and above
-            if (isMobile) {
-              // Mobile toggle should be visible (md:hidden means visible below md)
-              expect(responsivePatterns.navigation.mobileToggle).toContain("md:hidden");
-            } else {
-              // Desktop nav should be visible (hidden md:flex means visible at md and above)
-              expect(responsivePatterns.navigation.desktopVisible).toContain("md:flex");
-            }
+            // Mobile toggle should be visible (md:hidden means visible below md)
+            expect(responsivePatterns.navigation.mobileToggle).toContain("md:hidden");
+            // Desktop nav should be visible (hidden md:flex means visible at md and above)
+            expect(responsivePatterns.navigation.desktopVisible).toContain("md:flex");
           }
         ),
         { numRuns: 100 }
@@ -155,7 +150,7 @@ describe("Property 1: Responsive Layout Consistency", () => {
       fc.assert(
         fc.property(
           fc.integer({ min: 320, max: 1920 }),
-          (viewport: number) => {
+          (_viewport: number) => {
             // Property: Container max-width should be defined
             expect(responsivePatterns.container.maxWidth).toBe("max-w-7xl");
 
@@ -358,7 +353,7 @@ describe("Property 1: Responsive Layout Consistency", () => {
       fc.assert(
         fc.property(
           fc.integer({ min: 320, max: 1920 }),
-          (viewport: number) => {
+          (_viewport: number) => {
             // Property: Text should have base size defined
             expect(heroTextScaling.h1[0]).toBe("text-3xl");
             expect(heroTextScaling.body[0]).toBe("text-lg");
