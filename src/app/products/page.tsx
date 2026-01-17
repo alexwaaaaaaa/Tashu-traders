@@ -49,6 +49,20 @@ const products = [
       "Fresh and hygienically packed items",
     ],
   },
+  {
+    id: "medical",
+    icon: <Shield className="w-8 h-8" />,
+    title: "Medical Kits & Supplies",
+    description: "Comprehensive medical kits and first-aid supplies for institutions",
+    color: "from-[#1a4d3e] to-[#2d6a4f]",
+    image: "/images/product-medical.png",
+    features: [
+      "Complete medical kits for institutional use",
+      "Certified medical supplies and equipment",
+      "Bulk supply for health departments",
+      "Compliance with safety standards",
+    ],
+  },
 ];
 
 const supplyFeatures = [

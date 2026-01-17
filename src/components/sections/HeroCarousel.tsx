@@ -28,6 +28,16 @@ const slides: Slide[] = [
     overlayColor: "from-[#1e3a5f]/90 via-[#1e3a5f]/70 to-transparent",
   },
   {
+    id: 5,
+    title: "Skilled Manpower Supply",
+    subtitle: "Workforce Solutions",
+    description: "Providing qualified and skilled manpower for technical, administrative, and operational roles in government projects",
+    ctaText: "Our Services",
+    ctaLink: "/experience",
+    image: "/images/hero-manpower.png",
+    overlayColor: "from-[#2d5a87]/90 via-[#2d5a87]/70 to-transparent",
+  },
+  {
     id: 2,
     title: "Baby Kit Books Supply",
     subtitle: "Government Scheme Partner",
@@ -65,9 +75,8 @@ const SlideContent = memo(function SlideContent({ slide, isActive }: { slide: Sl
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           {slide.subtitle && (
-            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6 transition-all duration-500 ${
-              isActive ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-            }`}>
+            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6 transition-all duration-500 ${isActive ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+              }`}>
               <span className="w-2 h-2 bg-[#2d6a4f] rounded-full" />
               <span className="text-white/90 text-sm font-medium tracking-wide">
                 {slide.subtitle}
@@ -75,21 +84,18 @@ const SlideContent = memo(function SlideContent({ slide, isActive }: { slide: Sl
             </div>
           )}
 
-          <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 transition-all duration-500 ${
-            isActive ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}>
+          <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 transition-all duration-500 ${isActive ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}>
             {slide.title}
           </h1>
 
-          <p className={`text-lg sm:text-xl text-white/80 mb-8 leading-relaxed max-w-xl transition-all duration-500 ${
-            isActive ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}>
+          <p className={`text-lg sm:text-xl text-white/80 mb-8 leading-relaxed max-w-xl transition-all duration-500 ${isActive ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}>
             {slide.description}
           </p>
 
-          <div className={`transition-all duration-500 ${
-            isActive ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}>
+          <div className={`transition-all duration-500 ${isActive ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}>
             <Link
               href={slide.ctaLink}
               className="inline-flex items-center gap-3 text-white font-medium text-lg group"
@@ -136,9 +142,8 @@ export function HeroCarousel() {
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-700 ${
-              index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
           >
             <div className="absolute inset-0">
               <Image
@@ -169,11 +174,10 @@ export function HeroCarousel() {
                   <button
                     key={index}
                     onClick={() => goToSlide(index)}
-                    className={`h-1 rounded-full transition-all duration-300 ${
-                      index === currentSlide
+                    className={`h-1 rounded-full transition-all duration-300 ${index === currentSlide
                         ? "w-12 bg-white"
                         : "w-6 bg-white/40 hover:bg-white/60"
-                    }`}
+                      }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}
