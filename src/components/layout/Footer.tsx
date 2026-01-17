@@ -208,7 +208,29 @@ export default function Footer() {
                 className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-sm"
               >
                 <span>Built by</span>
-                <span className="font-semibold text-[#3b82f6]">RapidStackLab</span>
+                <span className="flex items-center gap-1.5">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5">
+                    <defs>
+                      <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#34d399"></stop>
+                        <stop offset="50%" stopColor="#10b981"></stop>
+                        <stop offset="100%" stopColor="#059669"></stop>
+                      </linearGradient>
+                      <linearGradient id="stackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#6ee7b7"></stop>
+                        <stop offset="100%" stopColor="#34d399"></stop>
+                      </linearGradient>
+                    </defs>
+                    <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#logoGradient)"></rect>
+                    <rect x="8" y="10" width="20" height="3" rx="1.5" fill="url(#stackGradient)" opacity="0.6"></rect>
+                    <rect x="8" y="16" width="16" height="3" rx="1.5" fill="url(#stackGradient)" opacity="0.4"></rect>
+                    <path d="M14 22V38H19V33H23L27 38H33L28 32C30.5 31 32 28.5 32 26C32 22.5 29 22 26 22H14ZM19 26H25C26.5 26 27 26.5 27 27.5C27 28.5 26.5 29 25 29H19V26Z" fill="white"></path>
+                    <rect x="35" y="14" width="6" height="2" rx="1" fill="white" opacity="0.8"></rect>
+                    <rect x="37" y="19" width="4" height="2" rx="1" fill="white" opacity="0.6"></rect>
+                    <rect x="38" y="24" width="3" height="2" rx="1" fill="white" opacity="0.4"></rect>
+                  </svg>
+                  <span className="font-semibold">Rapid<span className="text-emerald-400">Stack</span>lab</span>
+                </span>
               </a>
             </div>
             <div className="flex items-center gap-6 text-sm">
