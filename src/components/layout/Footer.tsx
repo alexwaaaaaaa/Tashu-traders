@@ -56,7 +56,7 @@ export default function Footer() {
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
               Building trust through quality. Your reliable partner for government tender supplies and institutional procurement.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3">
               <a href="tel:+917321044854" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors text-sm group">
@@ -193,13 +193,24 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar - TCS Style */}
       <div className="border-t border-gray-800">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm">
-              © {currentYear} Tashu Traders (TASHRA). All rights reserved.
-            </p>
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+              <p className="text-gray-500 text-sm">
+                © {currentYear} Tashu Traders (TASHRA). All rights reserved.
+              </p>
+              <span className="hidden sm:block text-gray-700">|</span>
+              <a
+                href="https://www.rapidstacklab.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-sm"
+              >
+                <span>Built by</span>
+                <span className="font-semibold text-[#3b82f6]">RapidStackLab</span>
+              </a>
+            </div>
             <div className="flex items-center gap-6 text-sm">
               <Link href="/privacy-policy" className="text-gray-500 hover:text-white transition-colors">
                 Privacy Policy
